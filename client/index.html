@@ -1,53 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US" ng-app="know-your-reps">
+<html lang="en-US" ng-app="whos-my-rep">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Know Your Reps | KYR</title>
+    <title>WMR | Who's My Rep?</title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
-<body ng-controller="mainCtrl">
-    <div class="jumbotron">
-        <div class="container">
-            <h1 id="welcome-header">Welcome to Know Your Reps!</h1>
-        </div>
-    </div>
+<body>
 
-    <div class="repSelection container">
-        <h2>Please fill out the following:</h2>
-        <span>Sen. or Rep.?</span>
-        <select ng-model="selectedRepType">
-            <option ng-repeat="repType in repTypes">{{repType}}</option>
-        </select>
-        <span>Choose State: </span>
-        <select ng-model="selectedState">
-            <option ng-repeat="state in stateInitials">{{state}}</option>
-        </select>
-        <button ng-disabled="selectedRepType=='' || selectedState==''" ng-click="getReps()">Submit</button>
-    </div>
 
-    <div class="rep-results container">
-        <ul>
-            <li ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)"><span class="rep-clickable">{{rep.name}} -- {{rep.party}}</span></li>
-        </ul>
-
-        <div class="current-rep" ng-show="repSelected">
-            {{currentRep.firstName}} </br>
-            {{currentRep.lastName}} </br>
-            {{currentRep.district}} </br>
-            {{currentRep.phone}} </br>
-            {{currentRep.office}}</br>
-            <a ng-href="{{currentRep.link}}">{{currentRep.link}}</a>
-
-        </div>
-    </div>
+    <div ui-view></div>
 
 
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>
-
+    <!--Angular UI Router-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <!--Local Scripts-->
     <script src="js/app.js"></script>
     <script src="js/controllers/mainCtrl.js"></script>
     <script src="js/services/mainService.js"></script>

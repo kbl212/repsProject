@@ -1,4 +1,4 @@
-var app = angular.module('know-your-reps');
+var app = angular.module('whos-my-rep');
 
 
 app.service('mainService', function ($http) {
