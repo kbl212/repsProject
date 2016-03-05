@@ -75,6 +75,10 @@ body {
     background-color: #000;
 }
 
+select {
+    width: 200px;
+}
+
 #welcome-header {
     font-size: 36px;
     color: red;

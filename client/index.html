@@ -17,13 +17,14 @@
 
     <div class="repSelection container">
         <h2>Please fill out the following:</h2>
-        <select ng-model="selectedState" ng-options="state as state for state in stateInitials">
+        <select ng-model="selectedRepType">
+            <option ng-repeat="repType in repTypes">{{repType}}</option>
         </select>
+        <select ng-model="selectedState">
+            <option ng-repeat="state in stateInitials">{{state}}</option>
+        </select>
+        <button ng-disabled="selectedRepType=='' || selectedState==''">Submit</button>
     </div>
-    <h1>TESTING.</h1>
-
-
-
 
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>
