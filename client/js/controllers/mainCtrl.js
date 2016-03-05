@@ -11,4 +11,10 @@ app.controller('mainCtrl', function($scope, mainService) {
     
     $scope.selectedRepType = "";
     $scope.selectedState = "";
+    
+    $scope.getReps = function() {
+        mainService.getAllReps($scope.selectedRepType, $scope.selectedState).then(function(response) {
+            console.log(response);
+        })
+    }
 });
