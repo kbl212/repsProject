@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="know-your-reps">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Reps | KYR</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body ng-controller="mainCtrl">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 id="welcome-header">Welcome to Know Your Reps!</h1>
+        </div>
+    </div>
+
+    <div class="repSelection container">
+        <h2>Please fill out the following:</h2>
+        <select ng-model="selectedState" ng-options="state as state for state in stateInitials">
+        </select>
+    </div>
+    <h1>TESTING.</h1>
+
+
+
+
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+    <script src="js/services/mainService.js"></script>
+</body>
+
+</html>

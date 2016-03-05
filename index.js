@@ -1,8 +1,20 @@
+////////////////
+//DEPENDENCIES//
+////////////////
 var express = require('express'),
     request = require('request'),
     app     = express(),
     server;
 
+//////////////
+//MIDDLEWARE//
+//////////////
+app.use(express.static(__dirname + '/client'));
+
+
+/////////////
+//ENDPOINTS//
+/////////////
 app.get('/representatives/:state',
   findRepresentativesByState,
   jsonResponse
@@ -13,6 +25,9 @@ app.get('/senators/:state',
   jsonResponse
 );
 
+/////////////
+//FUNCTIONS//
+/////////////
 function findRepresentativesByState(req, res, next) {
   var url = 'http://whoismyrepresentative.com/getall_reps_bystate.php?state={0}&output=json'.replace('{0}', req.params.state);
   request(url, handleApiResponse(res, next));
@@ -43,6 +58,10 @@ function handleApiResponse(res, next) {
 function jsonResponse(req, res, next) {
   return res.json(res.locals);
 }
+
+///////////////
+//CONNECTIONS//
+///////////////
 
 server = app.listen(3000, function() {
   var host = server.address().address,
