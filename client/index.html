@@ -17,14 +17,33 @@
 
     <div class="repSelection container">
         <h2>Please fill out the following:</h2>
-        <span>Sen. or Rep.?</span><select ng-model="selectedRepType">
+        <span>Sen. or Rep.?</span>
+        <select ng-model="selectedRepType">
             <option ng-repeat="repType in repTypes">{{repType}}</option>
         </select>
-        <span>Choose State: </span><select ng-model="selectedState">
+        <span>Choose State: </span>
+        <select ng-model="selectedState">
             <option ng-repeat="state in stateInitials">{{state}}</option>
         </select>
         <button ng-disabled="selectedRepType=='' || selectedState==''" ng-click="getReps()">Submit</button>
     </div>
+
+    <div class="rep-results container">
+        <ul>
+            <li ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)"><span class="rep-clickable">{{rep.name}} -- {{rep.party}}</span></li>
+        </ul>
+
+        <div class="current-rep" ng-show="repSelected">
+            {{currentRep.firstName}} </br>
+            {{currentRep.lastName}} </br>
+            {{currentRep.district}} </br>
+            {{currentRep.phone}} </br>
+            {{currentRep.office}}</br>
+            <a ng-href="{{currentRep.link}}">{{currentRep.link}}</a>
+
+        </div>
+    </div>
+
 
     <!--AngularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.js"></script>

@@ -85,5 +85,18 @@ select {
 }
 
 .repSelection {
-    height: 400px;
+    height: 200px;
+}
+
+.rep-clickable {
+    color: blue;
+    text-decoration: underline;
+}
+
+.rep-clickable:hover {
+    cursor: pointer;
+}
+
+.current-rep {
+    float:right;
 }

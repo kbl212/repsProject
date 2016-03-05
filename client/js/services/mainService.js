@@ -5,14 +5,14 @@ app.service('mainService', function ($http) {
 
     this.getAllReps = function(repType, repState) {
         if (repType == "Representative") {
-            $http.get("/representatives/" + repState).then(function(response) {
+            return $http.get("/representatives/" + repState).then(function(response) {
                 console.log("SERVICE RESPONSE", response);
                 return response.data;
             });
         }
         
         else if (repType == "Senator") {
-            $http.get("/senators/" + repState).then(function(response) {
+            return $http.get("/senators/" + repState).then(function(response) {
                 console.log("SERVICE RESPONSE", response);
                 return response.data;
             });
