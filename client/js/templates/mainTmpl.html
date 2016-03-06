@@ -24,13 +24,13 @@
 
                 <table class="full-list">
                     <thead>
-                        <th>Name</th>
-                        <th>Party</th>
+                        <th id="name-head">Name</th>
+                        <th id="party-head">Party</th>
                     </thead>
                     <tbody>
                         <tr ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)">
-                            <td>{{rep.name}}</td>
-                            <td>{{rep.party}}</td>
+                            <td id="name-cell">{{rep.name}}</td>
+                            <td id="party-cell">{{rep.party}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -38,17 +38,17 @@
             <div class="right-side">
                 <div class="current-rep" ng-show="repSelected">
                     <p class="list-title">Info</p>
-                    <p class="current-rep-info">{{currentRep.firstName}}</p>
+                    <p class="current-rep-info">First Name: {{currentRep.firstName}}</p>
                     </br>
-                    <p class="current-rep-info">{{currentRep.lastName}}</p>
+                    <p class="current-rep-info">Last Name: {{currentRep.lastName}}</p>
                     </br>
-                    <p class="current-rep-info">{{currentRep.district}}</p>
+                    <p class="current-rep-info">District: {{currentRep.district}}</p>
                     </br>
-                    <p class="current-rep-info">{{currentRep.phone}}</p>
+                    <p class="current-rep-info">Phone: {{currentRep.phone}}</p>
                     </br>
-                    <p class="current-rep-info">{{currentRep.office}}</p>
+                    <p class="current-rep-info">Office: {{currentRep.office}}</p>
                     </br>
-                    <p class="current-rep-info"><a ng-href="{{currentRep.link}}">{{currentRep.link}}</a></p>
+                    <p class="current-rep-info"><a ng-href="{{currentRep.link}}">Website: {{currentRep.link}}</a></p>
                 </div>
             </div>
         </div>

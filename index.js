@@ -63,7 +63,7 @@ function jsonResponse(req, res, next) {
 //CONNECTIONS//
 ///////////////
 
-server = app.listen(process.env.PORT, function () {
+server = app.listen(3000, function () {
     var host = server.address().address,
         port = server.address().port;
 
