@@ -177,3 +177,7 @@ tr:hover {
     width: 200px;
 }
 
+a {
+    word-wrap:break-word;
+}
+
