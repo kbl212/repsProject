@@ -1,12 +1,11 @@
-<div class="main-wrapper" ng-controller="mainCtrl">
+<div class="main-wrapper container" ng-controller="mainCtrl">
     <div class="jumbotron">
-        <div class="container">
-            <h1 id="welcome-header">Who's My Representative?</h1>
-        </div>
+        <h1 id="welcome-header">Who's My Representative?</h1>
+
     </div>
 
-    <div class="repSelection container">
-        <h2>Please fill out the following:</h2>
+    <div class="repSelection">
+        <!--<h2>Please fill out the following:</h2>-->
         <span>Sen. or Rep.?</span>
         <select ng-model="selectedRepType">
             <option ng-repeat="repType in repTypes">{{repType}}</option>
@@ -18,19 +17,40 @@
         <button ng-disabled="selectedRepType=='' || selectedState==''" ng-click="getReps()">Submit</button>
     </div>
 
-    <div class="rep-results container">
-        <ul>
-            <li ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)"><span class="rep-clickable">{{rep.name}} -- {{rep.party}}</span></li>
-        </ul>
+    <div class="rep-results">
+        <div ng-show="listShowing">
+            <p class="list-title">List / <span class="list-rep-type">{{currentRepType}}s</span></p>
 
-        <div class="current-rep" ng-show="repSelected">
-            {{currentRep.firstName}} </br>
-            {{currentRep.lastName}} </br>
-            {{currentRep.district}} </br>
-            {{currentRep.phone}} </br>
-            {{currentRep.office}}</br>
-            <a ng-href="{{currentRep.link}}">{{currentRep.link}}</a>
+            <table class="full-list">
+                <thead>
+                    <th>Name</th>
+                    <th>Party</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)">
+                        <td>{{rep.name}}</td>
+                        <td>{{rep.party}}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        </div>
+            <!--<ul>
+                <li ng-repeat="rep in currentReps" ng-click="getCurrentRep(rep.name)"><span class="rep-clickable">{{rep.name}} -- {{rep.party}}</span></li>
+            </ul>-->
+
+            <div class="current-rep" ng-show="repSelected">
+                <p class="list-title">Info</p>
+                <p class="current-rep-info">{{currentRep.firstName}}</p>
+                </br>
+                <p class="current-rep-info">{{currentRep.lastName}}</p>
+                </br>
+                <p class="current-rep-info">{{currentRep.district}}</p>
+                </br>
+                <p class="current-rep-info">{{currentRep.phone}}</p>
+                </br>
+                <p class="current-rep-info">{{currentRep.office}}</p>
+                </br>
+                <a class="current-rep-info" ng-href="{{currentRep.link}}">{{currentRep.link}}</a>
+            </div>
     </div>
 </div>

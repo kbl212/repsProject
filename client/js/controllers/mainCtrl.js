@@ -14,12 +14,16 @@ app.controller('mainCtrl', function($scope, mainService) {
     
     $scope.repSelected = false;
     
+    $scope.listShowing = false;
+    
     
     
     $scope.getReps = function() {
         mainService.getAllReps($scope.selectedRepType, $scope.selectedState).then(function(response) {
             $scope.repSelected = false;
+            $scope.currentRepType = $scope.selectedRepType;
             $scope.currentReps = response.results;
+            $scope.listShowing = true;
         })
     }
     

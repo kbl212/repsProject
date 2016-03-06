@@ -47,7 +47,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*END CSS RESET*/
+/*END CSS RESET---------------------------------------------------------------------------*/
 
 
 
@@ -57,46 +57,102 @@ table {
 html {
     height: 100%;
     width: 100%;
+    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+
 }
 
 body {
     height: 100%;
     width: 100%;
     position: relative;
+    margin-top: 50px;
 }
 
 .container {
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
+    background-color: #fff;
+    padding: 0 40px;
+    position: relative;
+    min-height: 700px;
 }
 
 .jumbotron {
-    height: 400px;
-    background-color: #000;
+    padding: 10px 0 30px 0;
 }
 
 select {
     width: 200px;
 }
 
+hr {
+    border-color: lightgray;
+}
+
 #welcome-header {
-    font-size: 36px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3CAAEC;
+}
+
+.list-rep-type {
     color: #3CAAEC;
 }
 
 .repSelection {
-    height: 200px;
+    border-top: 1px solid lightgray;
+    padding-top: 10px;
+    margin-bottom: 20px;
 }
 
-.rep-clickable {
-    color: blue;
-    text-decoration: underline;
-}
-
-.rep-clickable:hover {
-    cursor: pointer;
+.rep-results {
+    position: relative;
+    width: 100%;
 }
 
 .current-rep {
     float:right;
+    width: 20%;
+    display: inline-block;
 }
+
+.full-list {
+    width: 30%;
+    display: inline-block;
+}
+
+.list-title {
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+table {
+    margin-bottom: 50px;
+}
+
+th {
+    background-color: #F8F8F9;
+    width: 200px;
+    text-align: left;
+    padding: 10px 10px 10px 10px;
+}
+
+td {
+    padding: 5px 5px 5px 10px
+}
+
+tr {
+    border-bottom: 1px solid lightgray;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: #3CAAEC;
+}
+
+.current-rep-info {
+    background-color: #F4F4F5;
+    padding: 10px;
+}
+
