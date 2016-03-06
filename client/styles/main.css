@@ -59,7 +59,12 @@ html {
     width: 100%;
     background-color: #000;
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
 
+}
+
+select, option, button {
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -76,6 +81,8 @@ body {
     padding: 0 40px;
     position: relative;
     min-height: 700px;
+    overflow: auto;
+    min-width: 800px;
 }
 
 .jumbotron {
@@ -112,19 +119,29 @@ hr {
 }
 
 .current-rep {
-    float:right;
-    width: 20%;
-    display: inline-block;
+    margin-right: 5px;
 }
 
 .full-list {
-    width: 30%;
+    width: 60%;
+}
+
+.left-side, .right-side {
     display: inline-block;
+}
+
+.left-side {
+    float: left;
+}
+
+.right-side {
+    float: right;
 }
 
 .list-title {
     font-size: 24px;
     margin: 5px 0;
+    vertical-align: top;
 }
 
 table {
@@ -139,7 +156,9 @@ th {
 }
 
 td {
-    padding: 5px 5px 5px 10px
+    padding: 20px 5px 20px 10px;
+    width: 250px;
+
 }
 
 tr {
@@ -154,5 +173,7 @@ tr:hover {
 .current-rep-info {
     background-color: #F4F4F5;
     padding: 10px;
+    font-size: 18px;
+    width: 200px;
 }
 
