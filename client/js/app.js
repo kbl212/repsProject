@@ -9,7 +9,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'js/templates/mainTmpl.html',
             controller: 'mainCtrl'
-    })
+        })
 
     $urlRouterProvider
         .otherwise('/');
